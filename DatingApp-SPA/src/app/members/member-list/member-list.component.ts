@@ -33,6 +33,7 @@ export class MemberListComponent implements OnInit {
 
   pageChanged(event: any): void {
     this.pagination.currentPage = event.page;
+    this.loadUsers();
   }
 
   resetFilters() {
@@ -49,7 +50,7 @@ export class MemberListComponent implements OnInit {
       this.pagination = res.pagination;
     }, error => {
       this.alertify.error(error);
-    })
+    });
   }
 
 }
